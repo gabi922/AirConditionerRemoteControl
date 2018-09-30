@@ -1,0 +1,30 @@
+command-length = 32 bits
+first 16 bits = 0xC160
+
+last 16 bits: 15 14 13 12    11 10  9  8     7  6  5  4     3  2  1  0
+
+on/off toggle: bit 13 is set
+
+mode: bits 7, 6 and 5
+    110 - dry
+    001 - fan
+    000 - heating
+    010 - cooling
+
+fan speed: bits 15 and 14
+    00 - auto
+    10 - high
+    01 - medium
+    11 - small
+
+swing toggle: bit 8 is set
+
+jet on: fan speed = high and temp = 18
+
+temp: bits 3, 2, 1 and 0
+    0000 - 18
+    1000 - 19
+    0100 - 20
+    1100 - 21
+    ...
+    0111 - 32
